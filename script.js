@@ -1,35 +1,36 @@
 let items = ["Orange", "Apple", "Banana"];
 const shopListDOM = document.getElementById("listId");
 function printList() {
-
   shopListDOM.innerHTML = "";
-
   for (let item of items) {
     shopListDOM.innerHTML += `<li>${item} <span class="item-delete-btn">x</span> </li>`;
   }
 }
 
 // Función para eliminar un item de la lista
-
+function deleteItemFromList(item) {}
 
 // Función para agregar un item a la lista
 function addItemToList() {
-  //seleccionamos el imput
-  shopListDOM.innerHTML = "";
   const inputDOM = document.getElementById("inputId");
+  const newItem = inputDOM.value.trim
+  inputDOM.value = "";
 
-  items.push(inputDOM.text);
-  console.log(items);
-  //añadir a la lista ??? el valor de imput
+  console.log(newItem.trim())
 
-  //actualizar la lista en el DOM
+  //Guard
+  if (!newItem){
+    alert("debes introducir algo")
+    return;
+  }
+  items.push(newItem)
   printList();
+  console.log(items);
 }
 
 // Función principal - Aquí empieza la aplicación
 function main() {
   printList();
-  addItemToList();
 }
 
 // Llamada a la función principal
