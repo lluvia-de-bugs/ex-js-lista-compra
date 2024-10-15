@@ -10,20 +10,34 @@ function printList() {
 // Función para eliminar un item de la lista
 function deleteItemFromList(item) {}
 
+function capitalizerFirst(text) {
+  const firstLetter = text.charAt(0);
+  const rest = text.slice(1);
+  return firstLetter.toUpperCase() + rest.toLowerCase();
+}
+
+
 // Función para agregar un item a la lista
 function addItemToList() {
   const inputDOM = document.getElementById("inputId");
-  const newItem = inputDOM.value.trim
+  const newItem = inputDOM.value.trim();
   inputDOM.value = "";
-
-  console.log(newItem.trim())
+  console.log(newItem.trim());
 
   //Guard
-  if (!newItem){
-    alert("debes introducir algo")
+  
+  if (!newItem) {
+    alert("debes introducir algo");
     return;
   }
-  items.push(newItem)
+
+  if (newItem.length >= 25) {
+    alert("Mucho Texto")
+    return;
+  }
+  
+
+  items.push(capitalizerFirst(newItem));
   printList();
   console.log(items);
 }
