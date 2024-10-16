@@ -1,16 +1,35 @@
-let items = ["Orange", "Apple", "Banana"];
+//let items = ["Orange", "Apple", "Banana"];
+
+let items = [
+  {
+    name: "Orange",
+    isBought: false,
+  },
+  {
+    name: "Apple",
+    isBought: false,
+  },
+  {
+    name: "Banana",
+    isBought: true,
+  },
+];
+
+console.log(items);
+
 const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li><label><input type="checkbox"/> ${item} </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
+    shopListDOM.innerHTML += `<li><label><input type="checkbox"/> ${item.name} </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
   }
+
+  //if isBought: true --> ...
 }
 
 // Función para eliminar un item de la lista
 function deleteItemFromList(item) {
-  const indexToDelete = items.indexOf(item);
-  items.splice(indexToDelete, 1);
+  items = items.filter((item) => item.indexOf !== idToR);
   printList();
 }
 
@@ -43,7 +62,6 @@ function addItemToList() {
   }
   items.push(capitalizerFirst(newItem));
   printList();
-  console.log(items);
 }
 // Función principal - Aquí empieza la aplicación
 function main() {
