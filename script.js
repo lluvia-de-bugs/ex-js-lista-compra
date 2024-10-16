@@ -25,6 +25,13 @@ function addItemToList() {
   const newItem = inputDOM.value.trim();
   inputDOM.value = "";
   //Guard
+
+  for (const item of items){
+  if (item.toLowerCase() == newItem.toLowerCase()){
+    alert("El producto ya está en la lista");
+    return;
+    }}
+
   if (!newItem) {
     alert("debes introducir algo");
     return;
