@@ -3,11 +3,17 @@ const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li>${item} <span class="item-delete-btn">x</span> </li>`;
+    shopListDOM.innerHTML += `<li>${item} <span onclick="deleteItemFromList('${item}')" class="item-delete-btn">x</span> </li>`;
   }
 }
+
 // Función para eliminar un item de la lista
-function deleteItemFromList(item) {}
+function deleteItemFromList(item) {
+  const indexToDelete = items.indexOf(item);
+  items.splice(indexToDelete, 1);
+  printList();
+}
+
 function capitalizerFirst(text) {
   const firstLetter = text.charAt(0);
   const rest = text.slice(1);
@@ -18,14 +24,13 @@ function addItemToList() {
   const inputDOM = document.getElementById("inputId");
   const newItem = inputDOM.value.trim();
   inputDOM.value = "";
-  console.log(newItem.trim());
   //Guard
   if (!newItem) {
     alert("debes introducir algo");
     return;
   }
   if (newItem.length >= 25) {
-    alert("Mucho Texto")
+    alert("Mucho Texto");
     return;
   }
   items.push(capitalizerFirst(newItem));
@@ -38,20 +43,3 @@ function main() {
 }
 // Llamada a la función principal
 main();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
