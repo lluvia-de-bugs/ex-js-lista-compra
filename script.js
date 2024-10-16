@@ -3,7 +3,7 @@ const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li>${item} <span onclick="deleteItemFromList('${item}')" class="item-delete-btn">x</span> </li>`;
+    shopListDOM.innerHTML += `<li><label><input type="checkbox"/> ${items[index]} </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
   }
 }
 
@@ -26,11 +26,12 @@ function addItemToList() {
   inputDOM.value = "";
   //Guard
 
-  for (const item of items){
-  if (item.toLowerCase() == newItem.toLowerCase()){
-    alert("El producto ya está en la lista");
-    return;
-    }}
+  for (const item of items) {
+    if (item.toLowerCase() == newItem.toLowerCase()) {
+      alert("El producto ya está en la lista");
+      return;
+    }
+  }
 
   if (!newItem) {
     alert("debes introducir algo");
