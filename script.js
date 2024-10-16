@@ -3,7 +3,7 @@ const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li><label><input type="checkbox"/> ${items[index]} </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
+    shopListDOM.innerHTML += `<li><label><input type="checkbox"/> ${item} </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
   }
 }
 
