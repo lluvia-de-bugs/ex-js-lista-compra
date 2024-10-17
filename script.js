@@ -1,5 +1,3 @@
-//let items = ["Orange", "Apple", "Banana"];
-
 let items = [
   {
     name: "Orange",
@@ -11,7 +9,7 @@ let items = [
   },
   {
     name: "Banana",
-    isBought: true,
+    isBought: false,
   },
 ];
 
@@ -19,7 +17,7 @@ const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li><label}><input onchange="checkedItem('${
+    shopListDOM.innerHTML += `<li><label><input onchange="checkedItem('${
       item.name
     }') " type="checkbox" ${item.isBought ? "checked" : ""}/><span class="${
       item.isBought ? "textSpan" : ""
@@ -39,18 +37,6 @@ function checkedItem(itemName) {
   printList();
 }
 
-/*function checkedItem(index) {
-  const liDOM = document.querySelectorAll("li")[index];
-  const textSpanDOM = liDOM.querySelector(span.textSpan);
-  if (!items.name[index].isBought) {
-    textSpanDOM.style.textDecoration = "line-through";
-  } else {
-    items.name[index].isBought = false;
-    textSpanDOM.removeAttribute("style");
-  }
-}*/
-
-// Función para eliminar un item de la lista
 function deleteItemFromList(itemName) {
   const filterItems = [];
   for (let item of items) {
@@ -67,7 +53,7 @@ function capitalizerFirst(text) {
   const rest = text.slice(1);
   return firstLetter.toUpperCase() + rest.toLowerCase();
 }
-// Función para agregar un item a la lista
+
 function addItemToList() {
   const inputDOM = document.getElementById("inputId");
   const newItemName = inputDOM.value.trim();
@@ -99,9 +85,11 @@ function addItemToList() {
   items.push(newItem);
   printList();
 }
+
 // Función principal - Aquí empieza la aplicación
 function main() {
   printList();
 }
+
 // Llamada a la función principal
 main();
