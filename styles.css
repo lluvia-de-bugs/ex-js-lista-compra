@@ -48,8 +48,8 @@ h1 {
   margin-bottom: 10px;
 }
 
-span.textSpan {
-  color: #ff0000;
+.textSpan {
+  text-decoration: line-through;
 }
 
 .item-delete-btn {

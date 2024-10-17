@@ -15,27 +15,37 @@ let items = [
   },
 ];
 
-console.log(items);
-
 const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li><label}><input onChange="checkedItem(index)" type="checkbox" ${
-      item.isBought ? "checked" : ""
-    }/> ${item.name} </label><span onclick="deleteItemFromList('${
+    shopListDOM.innerHTML += `<li><label}><input onchange="checkedItem('${
+      item.name
+    }') " type="checkbox" ${item.isBought ? "checked" : ""}/><span class="${
+      item.isBought ? "textSpan" : ""
+    }"> ${item.name} </span></label><span onclick="deleteItemFromList('${
       item.name
     }')" class="item-delete-btn">x</span> </li>`;
   }
 }
 
+function checkedItem(itemName) {
+  console.log(itemName);
+  for (let item of items) {
+    if (item.name == itemName) {
+      item.isBought = !item.isBought;
+    }
+  }
+  printList();
+}
+
 /*function checkedItem(index) {
   const liDOM = document.querySelectorAll("li")[index];
   const textSpanDOM = liDOM.querySelector(span.textSpan);
-  if (!items[index].isBought) {
+  if (!items.name[index].isBought) {
     textSpanDOM.style.textDecoration = "line-through";
   } else {
-    items[index].isBought = false;
+    items.name[index].isBought = false;
     textSpanDOM.removeAttribute("style");
   }
 }*/
