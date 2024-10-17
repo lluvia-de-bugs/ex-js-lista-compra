@@ -23,9 +23,9 @@ function printList() {
   for (let item of items) {
     shopListDOM.innerHTML += `<li><label}><input onChange="checkedItem(index)" type="checkbox" ${
       item.isBought ? "checked" : ""
-    }/> ${
+    }/> ${item.name} </label><span onclick="deleteItemFromList('${
       item.name
-    } </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
+    }')" class="item-delete-btn">x</span> </li>`;
   }
 }
 
@@ -41,8 +41,14 @@ function printList() {
 }*/
 
 // Función para eliminar un item de la lista
-function deleteItemFromList(item) {
-  items.splice(index, 1);
+function deleteItemFromList(itemName) {
+  const filterItems = [];
+  for (let item of items) {
+    if (item.name != itemName) {
+      filterItems.push(item);
+    }
+  }
+  items = filterItems;
   printList();
 }
 
@@ -56,7 +62,6 @@ function addItemToList() {
   const inputDOM = document.getElementById("inputId");
   const newItemName = inputDOM.value.trim();
   inputDOM.value = "";
-  console.log(newItemName);
 
   //Guard
   if (!newItemName) {
@@ -83,7 +88,6 @@ function addItemToList() {
 
   items.push(newItem);
   printList();
-  console.log(items);
 }
 // Función principal - Aquí empieza la aplicación
 function main() {
