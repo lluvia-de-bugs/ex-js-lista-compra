@@ -21,15 +21,28 @@ const shopListDOM = document.getElementById("listId");
 function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
-    shopListDOM.innerHTML += `<li><label><input type="checkbox"/> ${item.name} </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
+    shopListDOM.innerHTML += `<li><label}><input onChange="checkedItem(index)" type="checkbox" ${
+      item.isBought ? "checked" : ""
+    }/> ${
+      item.name
+    } </label><span onclick="deleteItemFromList('${items}')" class="item-delete-btn">x</span> </li>`;
   }
-
-  //if isBought: true --> ...
 }
+
+/*function checkedItem(index) {
+  const liDOM = document.querySelectorAll("li")[index];
+  const textSpanDOM = liDOM.querySelector(span.textSpan);
+  if (!items[index].isBought) {
+    textSpanDOM.style.textDecoration = "line-through";
+  } else {
+    items[index].isBought = false;
+    textSpanDOM.removeAttribute("style");
+  }
+}*/
 
 // Función para eliminar un item de la lista
 function deleteItemFromList(item) {
-  items = items.filter((item) => item.indexOf !== idToR);
+  items.splice(index, 1);
   printList();
 }
 
@@ -41,27 +54,36 @@ function capitalizerFirst(text) {
 // Función para agregar un item a la lista
 function addItemToList() {
   const inputDOM = document.getElementById("inputId");
-  const newItem = inputDOM.value.trim();
+  const newItemName = inputDOM.value.trim();
   inputDOM.value = "";
+  console.log(newItemName);
+
   //Guard
+  if (!newItemName) {
+    alert("debes introducir algo");
+    return;
+  }
+
+  if (newItemName.length >= 25) {
+    alert("Mucho Texto");
+    return;
+  }
 
   for (const item of items) {
-    if (item.toLowerCase() == newItem.toLowerCase()) {
+    if (item.name.toLowerCase() == newItemName.toLowerCase()) {
       alert("El producto ya está en la lista");
       return;
     }
   }
 
-  if (!newItem) {
-    alert("debes introducir algo");
-    return;
-  }
-  if (newItem.length >= 25) {
-    alert("Mucho Texto");
-    return;
-  }
-  items.push(capitalizerFirst(newItem));
+  const newItem = {
+    name: capitalizerFirst(newItemName),
+    isBought: false,
+  };
+
+  items.push(newItem);
   printList();
+  console.log(items);
 }
 // Función principal - Aquí empieza la aplicación
 function main() {
