@@ -1,3 +1,5 @@
+import { fecthDataFromAPI } from "./api/api.service.js";
+
 let items = [
   {
     name: "Orange",
@@ -83,16 +85,6 @@ function addItemToList() {
 
   items.push(newItem);
   printList();
-}
-
-//fetch de la API:
-//function fetchItemsFromAPI()
-async function fecthDataFromAPI() {
-  console.log("FUNCIÓN async");
-  let response = await fetch(
-    "https://6710ec08a85f4164ef2ff611.mockapi.io/api/apiLista/items"
-  );
-  return await response.json();
 }
 
 //Función principal - Aquí empieza la aplicación
