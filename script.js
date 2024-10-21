@@ -1,4 +1,4 @@
-import { fecthDataFromAPI } from "./api/api.service.js";
+import { fecthDataFromAPI, postItemToApi } from "./api/api.service.js";
 
 let items = [
   {
@@ -82,8 +82,8 @@ function addItemToList() {
     name: capitalizerFirst(newItemName),
     isBought: false,
   };
-
-  items.push(newItem);
+  postItemToApi(newItem);
+  //items.push(newItem);
   printList();
 }
 
