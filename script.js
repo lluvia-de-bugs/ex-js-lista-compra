@@ -28,7 +28,6 @@ function printList() {
 }
 
 function checkedItem(itemName) {
-  console.log(itemName);
   for (let item of items) {
     if (item.name == itemName) {
       item.isBought = !item.isBought;
@@ -86,12 +85,23 @@ function addItemToList() {
   printList();
 }
 
-// Función principal - Aquí empieza la aplicación
-function main() {
+//fetch de la API:
+//function fetchItemsFromAPI()
+async function fecthDataFromAPI() {
+  console.log("FUNCIÓN async");
+  let response = await fetch(
+    "https://6710ec08a85f4164ef2ff611.mockapi.io/api/apiLista/items"
+  );
+  const data = await response.json();
+  items = data; //retornar data y asignarla fuera;
+}
+
+//Función principal - Aquí empieza la aplicación
+async function main() {
+  await fecthDataFromAPI();
   printList();
 }
 
-// Llamada a la función principal
 main();
 window.addItemToList = addItemToList;
 window.deleteItemFromList = deleteItemFromList;
