@@ -92,13 +92,12 @@ async function fecthDataFromAPI() {
   let response = await fetch(
     "https://6710ec08a85f4164ef2ff611.mockapi.io/api/apiLista/items"
   );
-  const data = await response.json();
-  items = data; //retornar data y asignarla fuera;
+  return await response.json();
 }
 
 //Función principal - Aquí empieza la aplicación
 async function main() {
-  await fecthDataFromAPI();
+  items = await fecthDataFromAPI();
   printList();
 }
 
