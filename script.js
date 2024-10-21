@@ -93,3 +93,6 @@ function main() {
 
 // Llamada a la función principal
 main();
+window.addItemToList = addItemToList;
+window.deleteItemFromList = deleteItemFromList;
+window.checkedItem = checkedItem;
