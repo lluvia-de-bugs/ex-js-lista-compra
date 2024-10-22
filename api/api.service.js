@@ -11,8 +11,10 @@ export async function postItemToApi(item) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(newItem),
+    body: JSON.stringify(item),
   });
-  console.log(newItem);
+  console.log(item);
   console.log(await response.json());
 }
+
+
