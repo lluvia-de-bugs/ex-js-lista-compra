@@ -17,12 +17,15 @@ export async function postItemToApi(item) {
 }
 
 //delete
-
 export async function deleteItemFromApi(itemId) {
   const response = await fetch(BASE_API + "/items/" + itemId, {
     method: "DELETE",
   });
-  console.log(itemId);
 }
 
 //put //patch //isBought
+export async function patchItemFromApi(itemId) {
+  const response = await fetch(BASE_API + "/items/" + itemId, {
+    method: "PATCH",
+  }); 
+  }

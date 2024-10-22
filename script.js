@@ -2,6 +2,7 @@ import {
   deleteItemFromApi,
   fecthDataFromAPI,
   postItemToApi,
+  patchItemFromApi,
 } from "./api/api.service.js";
 
 let items = [
@@ -33,12 +34,16 @@ function printList() {
   }
 }
 
-function checkedItem(itemName) {
+async function checkedItem(itemId) {
   for (let item of items) {
-    if (item.name == itemName) {
+    if (item.id == itemId) {
       item.isBought = !item.isBought;
-    }
-  }
+    }   
+  } 
+  items = await fecthDataFromAPI();
+  patchItemFromApi(itemId);
+  console.log(itemId);
+  console.log(patchItemFromApi);
   printList();
 }
 
