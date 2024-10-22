@@ -82,9 +82,10 @@ function addItemToList() {
     name: capitalizerFirst(newItemName),
     isBought: false,
   };
-  postItemToApi(newItem);
-  //items.push(newItem);
-  printList();
+  postItemToApi(newItem).then(() => {
+    items.push(newItem);
+    printList();
+  });
 }
 
 //Función principal - Aquí empieza la aplicación
