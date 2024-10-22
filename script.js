@@ -55,7 +55,7 @@ function capitalizerFirst(text) {
   return firstLetter.toUpperCase() + rest.toLowerCase();
 }
 
-function addItemToList() {
+async function addItemToList() {
   const inputDOM = document.getElementById("inputId");
   const newItemName = inputDOM.value.trim();
   inputDOM.value = "";
@@ -82,10 +82,10 @@ function addItemToList() {
     name: capitalizerFirst(newItemName),
     isBought: false,
   };
-  postItemToApi(newItem).then(() => {
-    items.push(newItem);
-    printList();
-  });
+  await postItemToApi(newItem);
+  items = await fecthDataFromAPI();
+  printList();
+  console.log(items);
 }
 
 //Función principal - Aquí empieza la aplicación

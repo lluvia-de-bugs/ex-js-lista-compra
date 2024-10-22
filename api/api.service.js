@@ -15,8 +15,6 @@ export async function postItemToApi(item) {
     },
     body: JSON.stringify(item),
   });
-  console.log(item);
-  console.log(await response.json());
 }
 
 //delete
