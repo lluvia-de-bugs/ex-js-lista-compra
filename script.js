@@ -1,4 +1,8 @@
-import { fecthDataFromAPI, postItemToApi } from "./api/api.service.js";
+import {
+  deleteItemFromApi,
+  fecthDataFromAPI,
+  postItemToApi,
+} from "./api/api.service.js";
 
 let items = [
   {
@@ -24,7 +28,7 @@ function printList() {
     }') " type="checkbox" ${item.isBought ? "checked" : ""}/><span class="${
       item.isBought ? "textSpan" : ""
     }"> ${item.name} </span></label><span onclick="deleteItemFromList('${
-      item.name
+      item.id
     }')" class="item-delete-btn">x</span> </li>`;
   }
 }
@@ -38,14 +42,15 @@ function checkedItem(itemName) {
   printList();
 }
 
-function deleteItemFromList(itemName) {
+async function deleteItemFromList(itemId) {
   const filterItems = [];
   for (let item of items) {
-    if (item.name != itemName) {
+    if (item.id != itemId) {
       filterItems.push(item);
     }
   }
   items = filterItems;
+  deleteItemFromApi(itemId);
   printList();
 }
 
@@ -85,7 +90,6 @@ async function addItemToList() {
   await postItemToApi(newItem);
   items = await fecthDataFromAPI();
   printList();
-  console.log(items);
 }
 
 //Función principal - Aquí empieza la aplicación
