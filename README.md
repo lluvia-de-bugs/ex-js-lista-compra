@@ -1,3 +1,26 @@
+# **Project Lluvia de Bugs - Aplicación de Lista de la Compra: CRUD con JavaScript**
+
+
+## **Metodologías**
+- Agile SCRUM utilizando Trello
+- Técnologias utilizadas: HTML5, JavaScript 
+- GIT & Git Hub
+- MOB Programming
+- Mock Api + Postman
+
+
+### Referencia lista ya estará previamente creada por defecto:
+![Lista de la Compra](./readme-files/lista-compra-ref.gif)
+
+### Equipo
+![Sergi Asins](https://github.com/SergiAsins)
+![Fran Garcia](https://github.com/FranGarciaga)
+![Stefano Micciche](https://github.com/LilBiscuit12)
+![Andreea Celmare](https://github.com/andreeaclmr)
+
+
+
+______________________________________________________________
 # 🛒 **Aplicación de Lista de la Compra: CRUD con JavaScript**
 
 ## 📝 **Introducción**
