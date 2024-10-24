@@ -21,11 +21,12 @@ export async function deleteItemFromApi(itemId) {
   const response = await fetch(BASE_API + "/items/" + itemId, {
     method: "DELETE",
   });
+  console.log(itemId);
 }
 
-//put //patch //isBought
-export async function patchItemFromApi(itemId) {
+export async function putItemFromApi(itemId) {
   const response = await fetch(BASE_API + "/items/" + itemId, {
-    method: "PATCH",
-  }); 
-  }
+    method: "GET",
+  });
+  console.log(response);
+}
