@@ -25,10 +25,10 @@ Esta aplicación permite a los usuarios crear, editar y eliminar productos, faci
 - Interfaz responsiva y amigable
 
 ### Equipo
-[Sergi Asins](https://github.com/SergiAsins)
-[Fran Garcia](https://github.com/FranGarciaga)
-[Stefano Micciche](https://github.com/LilBiscuit12)
-[Andreea Celmare](https://github.com/andreeaclmr)
+- [Sergi Asins](https://github.com/SergiAsins)
+- [Fran Garcia](https://github.com/FranGarciaga)
+- [Stefano Micciche](https://github.com/LilBiscuit12)
+- [Andreea Celmare](https://github.com/andreeaclmr)
 
 
 
