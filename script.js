@@ -25,7 +25,7 @@ function printList() {
   shopListDOM.innerHTML = "";
   for (let item of items) {
     shopListDOM.innerHTML += `<li><label><input onchange="checkedItem('${
-      item.name
+      item.id
     }') " type="checkbox" ${item.isBought ? "checked" : ""}/><span class="${
       item.isBought ? "textSpan" : ""
     }"> ${item.name} </span></label><span onclick="deleteItemFromList('${
@@ -38,11 +38,13 @@ async function checkedItem(itemId) {
   for (let item of items) {
     if (item.id == itemId) {
       item.isBought = !item.isBought;
+      await putItemFromApi(itemId, item);
+      console.log(itemId);
+      console.log(item);
     }
-    console.log(item.id);
   }
   items = await fecthDataFromAPI();
-  putItemFromApi();
+
   printList();
 }
 

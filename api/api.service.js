@@ -21,12 +21,15 @@ export async function deleteItemFromApi(itemId) {
   const response = await fetch(BASE_API + "/items/" + itemId, {
     method: "DELETE",
   });
-  console.log(itemId);
 }
 
-export async function putItemFromApi(itemId) {
+//put
+export async function putItemFromApi(itemId, item) {
   const response = await fetch(BASE_API + "/items/" + itemId, {
-    method: "GET",
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(item),
   });
-  console.log(response);
 }
