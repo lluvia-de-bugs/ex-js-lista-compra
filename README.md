@@ -1,5 +1,13 @@
 # **Project Lluvia de Bugs - Aplicación de Lista de la Compra: CRUD con JavaScript**
 
+## **Objetivo**
+Esta aplicación permite a los usuarios crear, editar y eliminar productos, facilitando la gestión de una lista de compra básica en CRUD, en JavaScript.
+
+## **Deploy Link**
+[Lista de la Compra](https://lluvia-de-bugs.github.io/ex-js-lista-compra/)
+
+### Referencia lista ya estará previamente creada por defecto:
+![Lista de la Compra](./readme-files/lista-compra-ref.gif)
 
 ## **Metodologías**
 - Agile SCRUM utilizando Trello
@@ -8,15 +16,19 @@
 - MOB Programming
 - Mock Api + Postman
 
+## **Arquitectura del proyecto**
 
-### Referencia lista ya estará previamente creada por defecto:
-![Lista de la Compra](./readme-files/lista-compra-ref.gif)
+
+
+## **Funcionalidades Clave**
+- Crear, editar y eliminar productos
+- Interfaz responsiva y amigable
 
 ### Equipo
-![Sergi Asins](https://github.com/SergiAsins)
-![Fran Garcia](https://github.com/FranGarciaga)
-![Stefano Micciche](https://github.com/LilBiscuit12)
-![Andreea Celmare](https://github.com/andreeaclmr)
+[Sergi Asins](https://github.com/SergiAsins)
+[Fran Garcia](https://github.com/FranGarciaga)
+[Stefano Micciche](https://github.com/LilBiscuit12)
+[Andreea Celmare](https://github.com/andreeaclmr)
 
 
 
